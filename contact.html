@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الاتصال بنا - YmirTakwin</title>
+
+  <link rel="stylesheet" href="styles/fonts.css">
+
+  <style>
+    :root {
+      --primary-color: #007acc;
+      --primary-gradient: linear-gradient(135deg, #007acc, #00d4ff);
+      --background: linear-gradient(145deg, #e2ecf5, #f9fbfd);
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(255, 255, 255, 0.25);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Tajawal', 'Cairo', 'Nunito', sans-serif;
+      background: var(--background);
+      line-height: 1.7;
+      color: #222;
+    }
+
+    nav {
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    nav a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    /* ✅ HEADER */
+    header {
+      background: var(--primary-gradient);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .contact-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      background: var(--glass-bg);
+      padding: 2rem;
+      border-radius: 1.2rem;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(6px);
+    }
+
+    .contact-container h2 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      font-size: 1.8rem;
+    }
+
+    .contact-info {
+      line-height: 1.9;
+      font-size: 1.1rem;
+    }
+
+    .contact-info strong {
+      display: block;
+      margin-top: 1rem;
+      color: #333;
+    }
+
+
+    footer {
+      background: var(--primary-gradient);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+      opacity: 0.9;
+      filter: brightness(0) invert(1);
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+
+    .contact-float {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: var(--primary-gradient);
+      color: white;
+      font-size: 1.4rem;
+      padding: 14px 16px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+      text-decoration: none;
+      z-index: 9999;
+      transition: transform 0.3s;
+    }
+
+    .contact-float:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .admin-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: default;
+      z-index: 9999;
+      opacity: 0.8;
+    }
+
+    .admin-btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html">🏠 العودة إلى الرئيسية</a>
+      <span>📞 الاتصال بنا</span>
+    </div>
+  </nav>
+
+
+  <header>
+    <h1>الاتصال بنا</h1>
+    <p>نرحب بتواصلك معنا لأي استفسارات أو ملاحظات</p>
+  </header>
+
+
+  <div class="contact-container">
+    <h2>معلومات الاتصال</h2>
+    <div class="contact-info">
+      <strong>📍 العنوان:</strong>
+      حي الدوزي - باب الزوار - الجزائر العاصمة
+
+      <strong>📧 البريد الإلكتروني:</strong>
+      takwinetasjili@hotmail.com
+
+      <strong>📞 رقم الهاتف:</strong>
+      +213 770 01 67 09
+    </div>
+  </div>
+
+
+  <footer>
+    <p>&copy; 2025 YmirTakwin. جميع الحقوق محفوظة.</p>
+    <div class="social-icons">
+      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" title="Facebook">
+        <img src="icons/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://instagram.com" target="_blank" title="Instagram">
+        <img src="icons/instagram.svg" alt="Instagram">
+      </a>
+    </div>
+  </footer>
+
+  <a href="contact.html" class="contact-float" title="اتصل بنا">✉</a>
+  <button class="admin-btn" onclick="return false;" title="خاص بالإدارة (غير مفعل)">الإدارة</button>
+
+</body>
+</html>

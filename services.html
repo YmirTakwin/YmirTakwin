@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تكويناتنا - YmirTakwin</title>
+
+  <!-- ✅ Local Fonts and Styles -->
+  <link rel="stylesheet" href="styles/fonts.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
+
+  <style>
+    body {
+      font-family: 'Tajawal', 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #f0f4ff, #ffffff);
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+
+    .navbar-custom {
+      background: linear-gradient(90deg, #007acc, #00c6ff);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      font-family: 'Tajawal', 'Cairo', sans-serif;
+    }
+
+    .navbar-custom a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    header {
+      background: linear-gradient(135deg, #007acc, #00c6ff);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-family: 'Tajawal', 'Cairo', sans-serif;
+    }
+
+    .services-section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* ==== Base Card ==== */
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      font-family: 'Cairo', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 8px;
+      width: 100%;
+      background: linear-gradient(90deg, #007acc, #00c6ff);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0, 122, 204, 0.25);
+    }
+
+    .card-title {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #007acc;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.6;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .info-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: white;
+      animation: fadeInUp 0.6s forwards;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .tag-price { background: #4caf50; }
+    .tag-date { background: #42a5f5; }
+    .tag-delivery { background: #ff9800; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==== Country themes ==== */
+    .english::before { background: linear-gradient(90deg, red, white, blue); }
+    .english .card-title { color: #003399; }
+
+    .german::before { background: linear-gradient(90deg, black, red, gold); }
+    .german .card-title { color: #d32f2f; }
+
+    .chinese::before { background: linear-gradient(90deg, red, gold); }
+    .chinese .card-title { color: #e53935; }
+
+    footer {
+      background: linear-gradient(90deg, #007acc, #00c6ff);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+      opacity: 0.85;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .social-icons a:hover img {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+
+    .contact-float {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: linear-gradient(135deg, #007acc, #00c6ff);
+      color: white;
+      font-size: 1.4rem;
+      padding: 10px 14px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-decoration: none;
+      z-index: 9999;
+      transition: background 0.3s, transform 0.3s;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .contact-float:hover {
+      background-color: #005f99;
+      transform: translateY(-2px);
+    }
+
+    .admin-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #007acc, #00c6ff);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: default;
+      z-index: 9999;
+      opacity: 0.7;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .admin-btn:hover {
+      background-color: #005f99;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar-custom">
+    <a href="index.html">🏠 العودة إلى الرئيسية</a>
+    <span>📚 تكويناتنا</span>
+  </nav>
+
+  <header>
+    <h1>تكويناتنا</h1>
+    <p>استكشف جميع الدورات والتكوينات التي نقدمها ضمن برامج معتمدة وعصرية</p>
+  </header>
+
+<section class="services-section">
+  <div class="card">
+    <h3 class="card-title">📘 Coach Linguist - المدرب اللغوي</h3>
+    <p class="card-text">
+      يتضمن <strong>كتاب تقنيات التدريب</strong>.<br><br>
+      💾 فلاش ديسك يحتوي على أكثر من <strong>40 ساعة مسجلة</strong> عن تقنيات مناهج الدروس.<br><br>
+      موجه لكل شخص:<br>
+      • عنده اهتمام بالتعليم.<br>
+      • يرغب في دخول مجال التدريس.<br>
+      • يريد التعمق في منهجية التعليم.<br><br>
+      👩‍🏫 مناسب للأساتذة، الماكثات في المنزل أو المتخرجين، حيث يمدك بالمعلومات الكافية لتصبح مدرباً محترفاً.
+    </p>
+    <div class="info-box">
+      <span class="tag tag-price">💵 السعر: 2500 دج</span>
+      <span class="tag tag-date">📅 متوفر: 25 سبتمبر</span>
+      <span class="tag tag-delivery">🚚 توصيل مجاني للعاصمة - باقي الولايات عبر المكاتب</span>
+    </div>
+  </div>
+
+  <div class="card english">
+    <h3 class="card-title">Coach Linguist English - مدرب لغوي في اللغة الإنجليزية</h3>
+    <p class="card-text">
+      يتضمن <strong>كتاب تقنيات التدريب</strong>.<br><br>
+      💾 فلاش ديسك يحتوي على أكثر من <strong>40 ساعة مسجلة</strong> عن تقنيات مناهج الدروس.<br><br>
+      بالإضافة إلى ذلك:<br>
+      • 📘 كتاب البرنامج المكثف للغة الإنجليزية.<br>
+      • ⏱️ 24 ساعة مسجلة عن القواعد.<br>
+      • 🗣️ 24 ساعة مسجلة خاصة بالتواصل.<br>
+      • 💻 دروس مسجلة عن تقنيات التصميم الإلكتروني (Canva).
+    </p>
+    <div class="info-box">
+      <span class="tag tag-price">💵 السعر: 4800 دج</span>
+      <span class="tag tag-date">📅 متوفر: 25 سبتمبر</span>
+      <span class="tag tag-delivery">🚚 توصيل مجاني للعاصمة - باقي الولايات عبر المكاتب</span>
+    </div>
+  </div>
+
+  <div class="card german">
+    <h3 class="card-title">Coach Linguist Deutsch - مدرب لغوي في اللغة الألمانية</h3>
+    <p class="card-text">
+      يتضمن <strong>كتاب تقنيات التدريب</strong>.<br><br>
+      💾 فلاش ديسك يحتوي على أكثر من <strong>40 ساعة مسجلة</strong> عن تقنيات مناهج الدروس.<br><br>
+      بالإضافة إلى ذلك:<br>
+      • 📘 كتاب البرنامج المكثف للغة الألمانية.<br>
+      • ⏱️ 24 ساعة مسجلة عن القواعد.<br>
+      • 🗣️ 24 ساعة مسجلة خاصة بالتواصل.<br>
+      • 💻 دروس مسجلة عن تقنيات التصميم الإلكتروني (Canva).
+    </p>
+    <div class="info-box">
+      <span class="tag tag-price">💵 السعر: 4800 دج</span>
+      <span class="tag tag-date">📅 متوفر: 25 سبتمبر</span>
+      <span class="tag tag-delivery">🚚 توصيل مجاني للعاصمة - باقي الولايات عبر المكاتب</span>
+    </div>
+  </div>
+
+  <div class="card chinese">
+    <h3 class="card-title">Coach Linguist Chinese - مدرب لغوي في اللغة الصينية</h3>
+    <p class="card-text">
+      يتضمن <strong>كتاب تقنيات التدريب</strong>.<br><br>
+      💾 فلاش ديسك يحتوي على أكثر من <strong>40 ساعة مسجلة</strong> عن تقنيات مناهج الدروس.<br><br>
+      بالإضافة إلى ذلك:<br>
+      • 📘 كتاب البرنامج المكثف للغة الصينية.<br>
+      • ⏱️ 24 ساعة مسجلة عن القواعد.<br>
+      • 🗣️ 24 ساعة مسجلة خاصة بالتواصل.<br>
+      • 💻 دروس مسجلة عن تقنيات التصميم الإلكتروني (Canva).
+    </p>
+    <div class="info-box">
+      <span class="tag tag-price">💵 السعر: 6500 دج</span>
+      <span class="tag tag-date">📅 متوفر: 20 أكتوبر </span>
+      <span class="tag tag-delivery">🚚 توصيل مجاني للعاصمة - باقي الولايات عبر المكاتب</span>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 YmirTakwin جميع الحقوق محفوظة.</p>
+    <div class="social-icons">
+      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" title="Facebook">
+        <img src="icons/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://instagram.com" target="_blank" title="Instagram">
+        <img src="icons/instagram.svg" alt="Instagram">
+      </a>
+    </div>
+  </footer>
+
+  <a href="contact.html" class="contact-float" title="اتصل بنا">✉</a>
+
+  <button class="admin-btn" onclick="return false;" title="خاص بالإدارة (غير مفعل)">الإدارة</button>
+
+</body>
+</html>

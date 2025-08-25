@@ -1,0 +1,88 @@
+
+
+/* ---------------- Cairo ---------------- */
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/cairo-v30-arabic-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/cairo-v30-arabic-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/cairo-v30-arabic-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/cairo-v30-arabic-900.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ---------------- Nunito ---------------- */
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/nunito-v31-latin-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/nunito-v31-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/nunito-v31-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/nunito-v31-latin-900.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/nunito-v31-latin-900italic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* ---------------- Tajawal ---------------- */
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/tajawal-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/tajawal-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('../fonts/tajawal-900.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
