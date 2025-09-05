@@ -93,6 +93,11 @@
       color: #333;
     }
 
+    .contact-info a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
 
     footer {
       background: var(--primary-gradient);
@@ -123,14 +128,14 @@
       transform: scale(1.2) rotate(5deg);
     }
 
-
+    /* ✅ واتساب زر عائم */
     .contact-float {
       position: fixed;
       bottom: 80px;
       right: 20px;
-      background: var(--primary-gradient);
+      background: #25d366;
       color: white;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       padding: 14px 16px;
       border-radius: 50%;
       box-shadow: 0 5px 15px rgba(0,0,0,0.25);
@@ -163,16 +168,70 @@
     .admin-btn:hover {
       transform: scale(1.05);
     }
+
+    /* small screens */
+    @media (max-width: 520px) {
+      header { padding: 2.5rem 1rem; }
+      header h1 { font-size: 1.8rem; }
+      .contact-container { margin: 1.5rem 1rem; padding: 1.2rem; }
+    }
   </style>
 </head>
 <body>
 
   <nav>
     <div class="nav-container">
-      <a href="index.html">🏠 العودة إلى الرئيسية</a>
+      <a href="index.html" aria-label="العودة إلى الرئيسية">🏠 العودة إلى الرئيسية</a>
       <span>📞 الاتصال بنا</span>
     </div>
   </nav>
+
+  <header>
+    <h1>الاتصال بنا</h1>
+    <p>نرحب بتواصلك معنا لأي استفسارات أو ملاحظات</p>
+  </header>
+
+  <div class="contact-container">
+    <h2>معلومات الاتصال</h2>
+    <div class="contact-info">
+      <strong>📍 العنوان:</strong>
+      حي الدوزي - باب الزوار - الجزائر العاصمة
+
+      <strong>📧 البريد الإلكتروني:</strong>
+      <a href="mailto:Ymiradmn@gmail.com">Ymiradmn@gmail.com</a>
+
+      <strong>📱 واتساب:</strong>
+      <a href="https://wa.me/213770016709" target="_blank" rel="noopener noreferrer">+213770016709</a>
+
+      <strong>☎ الهاتف:</strong>
+      <a href="tel:+213552149361">+213552149361</a>
+
+        <strong>تابعنا على:</strong>
+    <a href="https://www.instagram.com/ymir_takwin/" target="_blank" rel="noopener noreferrer"> Instagram: Ymir_Takwin</a><br>
+    <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" rel="noopener noreferrer"> Facebook: Ymir Takwin</a>
+  </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 YmirTakwin. جميع الحقوق محفوظة.</p>
+    <div class="social-icons">
+      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" rel="noopener noreferrer" title="مركز يميير للتكوين" aria-label="فيسبوك - مركز يميير للتكوين">
+        <img src="icons/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/ymir_takwin/" target="_blank" rel="noopener noreferrer" title="Ymir_Takwin" aria-label="انستغرام - Ymir_Takwin">
+        <img src="icons/instagram.svg" alt="Instagram">
+      </a>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/213770016709" class="contact-float" title="راسلنا على واتساب" aria-label="راسلنا على واتساب">💬</a>
+
+  <button class="admin-btn" onclick="return false;" title="خاص بالإدارة (غير مفعل)">الإدارة</button>
+
+</body>
+</html>
+
 
 
   <header>
@@ -213,3 +272,4 @@
 
 </body>
 </html>
+
