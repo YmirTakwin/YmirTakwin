@@ -189,6 +189,24 @@
       -webkit-text-fill-color: transparent;
     }
 
+    /* SOCIAL LINKS (inside sections) */
+    .social-inline {
+      margin-top: 1.5rem;
+    }
+    .social-inline a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .social-inline img {
+      width: 28px;
+      height: 28px;
+      opacity: 0.85;
+      transition: transform 0.3s ease;
+    }
+    .social-inline a:hover img {
+      transform: scale(1.2);
+    }
+
     /* FOOTER */
     footer {
       background: var(--primary-gradient);
@@ -338,6 +356,14 @@
   <section id="services-preview" class="section-flex">
     <h2>تكويناتنا</h2>
     <p>نقدّم لك مجموعة متنوعة من التكوينات الاحترافية، يمكنك الاطلاع عليها في صفحتنا الخاصة.</p>
+    <div class="social-inline">
+      <a href="https://www.instagram.com/ymir_takwin/" target="_blank" title="Ymir_Takwin">
+        <img src="icons/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" title="يمير للتكوين">
+        <img src="icons/facebook.svg" alt="Facebook">
+      </a>
+    </div>
     <img src="images/picture2.jpg" alt="خدمات">
   </section>
 
@@ -356,10 +382,10 @@
   <footer>
     <p>&copy; 2025 YmirTakwin. جميع الحقوق محفوظة.</p>
     <div class="social-icons">
-      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" title="Facebook">
+      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" rel="noopener noreferrer" title="مركز يميير للتكوين" aria-label="فيسبوك - مركز يميير للتكوين">
         <img src="icons/facebook.svg" alt="Facebook">
       </a>
-      <a href="https://instagram.com" target="_blank" title="Instagram">
+      <a href="https://www.instagram.com/ymir_takwin/" target="_blank" rel="noopener noreferrer" title="Ymir_Takwin" aria-label="انستغرام - Ymir_Takwin">
         <img src="icons/instagram.svg" alt="Instagram">
       </a>
     </div>
@@ -373,6 +399,14 @@
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('active');
     }
+
+    // Close menu when clicking a link (mobile)
+    const navLinks = document.querySelectorAll('.nav-menu li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('menu').classList.remove('active');
+      });
+    });
 
     // Scroll reveal animation
     const sections = document.querySelectorAll("section");
