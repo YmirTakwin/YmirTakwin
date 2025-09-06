@@ -117,6 +117,22 @@
     .tag-date { background: #42a5f5; }
     .tag-delivery { background: #ff9800; }
 
+    .register-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 10px 18px;
+      background: linear-gradient(90deg, #ff8000, #ffae42);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background: linear-gradient(90deg, #ffae42, #ff8000);
+    }
+
     footer {
       background: linear-gradient(90deg, #007acc, #00c6ff);
       color: white;
@@ -161,22 +177,6 @@
 
   <section class="services-section">
 
-    <!-- Tour Assistant -->
-    <div class="accordion-item">
-      <button class="accordion-title">Tour Assisstant and Language Interpreter - مرافق سياحي ومترجم</button>
-      <div class="accordion-content">
-        <p class="card-text">
-          • 📘 تكوين لغوي: الصينية والإنجليزية (120 ساعة لكل لغة)<br>
-          • ⏱️ 24 ساعة مصطلحات تقنية بالفرنسية والإيطالية<br>
-          • 🗣️ تدريب ميداني ومرافقة سياحية
-        </p>
-        <div class="info-box">
-          <span class="tag tag-price">💵 السعر: 55000 دج</span>
-          <span class="tag tag-date">📅 متوفر قريبًا</span>
-        </div>
-      </div>
-    </div>
-
     <!-- German -->
     <div class="accordion-item">
       <button class="accordion-title">Coach Linguist Deutsch - مدرب لغوي ألمانية</button>
@@ -192,6 +192,7 @@
           <span class="tag tag-price">💵 السعر: 28000 دج</span>
           <span class="tag tag-date">📅 متوفر: 10 سبتمبر</span>
         </div>
+        <a href="https://forms.cloud.microsoft/r/iNEjcdQ9Yh" class="register-btn">سجّل من هنا</a>
       </div>
     </div>
 
@@ -210,6 +211,7 @@
           <span class="tag tag-price">💵 السعر: 34000 دج</span>
           <span class="tag tag-date">📅 متوفر: 10 سبتمبر</span>
         </div>
+        <a href="https://forms.cloud.microsoft/r/mKyUnXVcQt" class="register-btn">سجّل من هنا</a>
       </div>
     </div>
 
@@ -228,6 +230,23 @@
         </div>
       </div>
     </div>
+    
+    <!-- Tour Assistant -->
+    <div class="accordion-item">
+      <button class="accordion-title">Tour Assisstant and Language Interpreter - مرافق سياحي ومترجم</button>
+      <div class="accordion-content">
+        <p class="card-text">
+          • 📘 تكوين لغوي: الصينية والإنجليزية (120 ساعة لكل لغة)<br>
+          • ⏱️ 24 ساعة مصطلحات تقنية بالفرنسية والإيطالية<br>
+          • 🗣️ تدريب ميداني ومرافقة سياحية
+        </p>
+        <div class="info-box">
+          <span class="tag tag-price">💵 السعر: 55000 دج</span>
+          <span class="tag tag-date">📅 متوفر قريبًا</span>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Admin Assistant -->
     <div class="accordion-item">
@@ -245,12 +264,12 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 YmirTakwin جميع الحقوق محفوظة.</p>
+    <p>&copy; 2025 YmirTakwin. جميع الحقوق محفوظة.</p>
     <div class="social-icons">
-      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" title="Facebook">
+      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" rel="noopener noreferrer" title="مركز يميير للتكوين" aria-label="فيسبوك - مركز يميير للتكوين">
         <img src="icons/facebook.svg" alt="Facebook">
       </a>
-      <a href="https://instagram.com" target="_blank" title="Instagram">
+      <a href="https://www.instagram.com/ymir_takwin/" target="_blank" rel="noopener noreferrer" title="Ymir_Takwin" aria-label="انستغرام - Ymir_Takwin">
         <img src="icons/instagram.svg" alt="Instagram">
       </a>
     </div>
@@ -287,6 +306,4 @@
 
 </body>
 </html>
-
-
 
