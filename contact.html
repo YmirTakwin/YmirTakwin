@@ -46,7 +46,7 @@
       text-decoration: none;
     }
 
-    /* ✅ HEADER */
+    /*  HEADER */
     header {
       background: var(--primary-gradient);
       color: white;
@@ -99,6 +99,10 @@
       font-weight: 600;
     }
 
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       background: var(--primary-gradient);
       color: white;
@@ -128,7 +132,7 @@
       transform: scale(1.2) rotate(5deg);
     }
 
-    /* ✅ واتساب زر عائم */
+    /*  واتساب زر عائم */
     .contact-float {
       position: fixed;
       bottom: 80px;
@@ -169,11 +173,64 @@
       transform: scale(1.05);
     }
 
+    /* Modal for Telegram QR */
+    .modal {
+      display: none; /* default hidden */
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 400px;
+      animation: zoomIn 0.3s ease;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      margin-top: 1rem;
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
     /* small screens */
     @media (max-width: 520px) {
       header { padding: 2.5rem 1rem; }
       header h1 { font-size: 1.8rem; }
       .contact-container { margin: 1.5rem 1rem; padding: 1.2rem; }
+      .modal-content { width: 90%; }
     }
   </style>
 </head>
@@ -206,10 +263,14 @@
       <strong>☎ الهاتف:</strong>
       <a href="tel:+213552149361">+213552149361</a>
 
-        <strong>تابعنا على:</strong>
-    <a href="https://www.instagram.com/ymir_takwin/" target="_blank" rel="noopener noreferrer"> Instagram: Ymir_Takwin</a><br>
-    <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" rel="noopener noreferrer"> Facebook: Ymir Takwin</a>
-  </div>
+      <strong>تابعنا على:</strong><br>
+      <a href="https://www.instagram.com/ymir_takwin/" target="_blank" rel="noopener noreferrer">Instagram: Ymir_Takwin</a><br>
+      <a href="https://web.facebook.com/profile.php?id=61575200202149" target="_blank" rel="noopener noreferrer">Facebook: Ymir Takwin</a><br>
+
+      <a href="#" id="telegramBtn" style="font-size:1.2rem;">
+        <img src="images/telegram.png" alt="Telegram" style="width:34px;vertical-align:middle;margin-left:6px;">
+        Telegram
+      </a>
     </div>
   </div>
 
@@ -225,9 +286,36 @@
     </div>
   </footer>
 
+  <!-- ✅ Modal for QR -->
+  <div id="telegramModal" class="modal">
+    <div class="modal-content">
+      <img src="images/teleYmir.png" alt="Telegram QR">
+      <button class="close-btn" id="closeModal">إغلاق</button>
+    </div>
+  </div>
+
   <a href="https://wa.me/213770016709" class="contact-float" title="راسلنا على واتساب" aria-label="راسلنا على واتساب">💬</a>
 
   <button class="admin-btn" onclick="return false;" title="خاص بالإدارة (غير مفعل)">الإدارة</button>
+
+  <script>
+    const telegramBtn = document.getElementById("telegramBtn");
+    const modal = document.getElementById("telegramModal");
+    const closeModal = document.getElementById("closeModal");
+
+    telegramBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.add("show");
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.remove("show");
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("show");
+    });
+  </script>
 
 </body>
 </html>
