@@ -46,7 +46,6 @@
       text-decoration: none;
     }
 
-    /*  HEADER */
     header {
       background: var(--primary-gradient);
       color: white;
@@ -132,7 +131,6 @@
       transform: scale(1.2) rotate(5deg);
     }
 
-    /*  واتساب زر عائم */
     .contact-float {
       position: fixed;
       bottom: 80px;
@@ -173,9 +171,8 @@
       transform: scale(1.05);
     }
 
-    /* Modal for Telegram QR */
     .modal {
-      display: none; /* default hidden */
+      display: none;
       position: fixed;
       z-index: 10000;
       left: 0;
@@ -225,12 +222,24 @@
       to { transform: scale(1); opacity: 1; }
     }
 
-    /* small screens */
     @media (max-width: 520px) {
       header { padding: 2.5rem 1rem; }
       header h1 { font-size: 1.8rem; }
       .contact-container { margin: 1.5rem 1rem; padding: 1.2rem; }
       .modal-content { width: 90%; }
+    }
+
+    /* map image style */
+    .map-link img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .map-link img:hover {
+      transform: scale(1.02);
     }
   </style>
 </head>
@@ -253,6 +262,12 @@
     <div class="contact-info">
       <strong>📍 العنوان:</strong>
       حي الدوزي - باب الزوار - الجزائر العاصمة
+      <br><br>
+      <!-- ✅ Added GPS image with link -->
+      <a class="map-link" href="https://maps.app.goo.gl/JT2EwJyqjdqU3kf36" target="_blank" rel="noopener noreferrer">
+        <img src="images/Sahla.jpg" alt="موقع مركز يميير على الخريطة">
+      </a>
+      <p style="margin-top:0.5rem;">اضغط على الصورة لفتح الموقع على Google Maps</p>
 
       <strong>📧 البريد الإلكتروني:</strong>
       <a href="mailto:Ymiradmn@gmail.com">Ymiradmn@gmail.com</a>
@@ -286,7 +301,6 @@
     </div>
   </footer>
 
-  <!--  Modal for QR -->
   <div id="telegramModal" class="modal">
     <div class="modal-content">
       <img src="images/teleymir.png" alt="Telegram QR">
@@ -319,5 +333,4 @@
 
 </body>
 </html>
-
 
